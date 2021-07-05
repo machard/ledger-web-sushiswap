@@ -3,6 +3,7 @@ import { binance, fortmatic, injected, lattice, portis, torus, walletconnect, wa
 
 import { AbstractConnector } from '@web3-react/abstract-connector'
 import { BigNumber } from 'ethers'
+import { takeRightWhile } from 'lodash'
 
 export const POOL_DENY = ['14', '29', '45', '30']
 
@@ -60,7 +61,7 @@ export interface WalletInfo {
 }
 
 export const SUPPORTED_WALLETS: { [key: string]: WalletInfo } = {
-  INJECTED: {
+  /*INJECTED: {
     connector: injected,
     name: 'Injected',
     iconName: 'injected.svg',
@@ -85,7 +86,18 @@ export const SUPPORTED_WALLETS: { [key: string]: WalletInfo } = {
     href: null,
     color: '#4196FC',
     mobile: true,
+  },*/
+  LEDGER_WEB: {
+    connector: injected,
+    name: 'LedgerWeb',
+    iconName: 'wallet-connect.svg',
+    description: 'Connect to ledger web',
+    href: null,
+    color: '#4196FC',
+    mobile: true,
+    primary: true,
   },
+  /*
   LATTICE: {
     connector: lattice,
     name: 'Lattice',
@@ -148,6 +160,7 @@ export const SUPPORTED_WALLETS: { [key: string]: WalletInfo } = {
     color: '#F0B90B',
     mobile: true,
   },
+  */
 }
 
 export const NetworkContextName = 'NETWORK'

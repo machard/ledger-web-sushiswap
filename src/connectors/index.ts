@@ -10,6 +10,7 @@ import { PortisConnector } from '@web3-react/portis-connector'
 import { TorusConnector } from '@web3-react/torus-connector'
 import { WalletConnectConnector } from '@web3-react/walletconnect-connector'
 import { WalletLinkConnector } from '@web3-react/walletlink-connector'
+import LedgerWebConnector from './LedgerWebConnector'
 
 const RPC = {
   [ChainId.MAINNET]: 'https://eth-mainnet.alchemyapi.io/v2/q1gSNoSMEzJms47Qn93f9-9Xg5clkmEC',
@@ -49,7 +50,7 @@ export function getNetworkLibrary(): Web3Provider {
   return (networkLibrary = networkLibrary ?? new Web3Provider(network.provider as any))
 }
 
-export const injected = new InjectedConnector({
+/*export const injected = new InjectedConnector({
   supportedChainIds: [
     1, // mainnet
     3, // ropsten
@@ -75,7 +76,7 @@ export const injected = new InjectedConnector({
     42161, // arbitrum
     42220, // celo
   ],
-})
+})*/
 
 // mainnet only
 export const walletconnect = new WalletConnectConnector({
@@ -83,6 +84,12 @@ export const walletconnect = new WalletConnectConnector({
   bridge: 'https://bridge.walletconnect.org',
   qrcode: true,
   pollingInterval: 15000,
+})
+
+// mainnet only
+export const injected = new LedgerWebConnector({
+  url: 'https://mainnet.infura.io/v3/2e87c2891f3c431da2b024f83bd05571',
+  chainId: 1,
 })
 
 // mainnet only

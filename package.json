@@ -137,5 +137,10 @@
     "entrypoints": [
       "src/pages"
     ]
+  },
+  "dependencies": {
+    "ledger-web-client": "^1.0.0",
+    "ledger-web-hw-transport": "^1.0.0",
+    "uuid": "^8.3.2"
   }
 }
