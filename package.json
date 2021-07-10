@@ -139,8 +139,7 @@
     ]
   },
   "dependencies": {
-    "ledger-web-client": "^1.0.0",
-    "ledger-web-hw-transport": "^1.0.0",
+    "ledger-web-subprovider": "^1.0.2",
     "uuid": "^8.3.2"
   }
 }
